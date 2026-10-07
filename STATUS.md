@@ -1,0 +1,1 @@
+Manuscript scaffold linked to the executable residual-control prototype. No publication or peer-review claim.

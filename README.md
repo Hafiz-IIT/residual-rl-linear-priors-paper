@@ -1,17 +1,22 @@
-# Residual RL with Linear Priors — Research Manuscript
+# Residual Reinforcement Learning with Linear Statistical Priors for Robotic Automation
 
-This repository is the manuscript companion for the **Residual RL with Linear Priors** research prototype.
+**Status: manuscript in preparation; not submitted or published.**
 
-## Research question
-Can a learned residual correction improve a transparent linear control prior while retaining an inspectable baseline?
+This repository contains the LaTeX manuscript source and experiment protocol for studying residual policies around transparent linear control priors.
 
-## Manuscript structure
-- `paper/abstract.md`
-- `paper/research_question.md`
-- `paper/method.md`
-- `paper/claims.md`
-- `paper/limitations.md`
-- `paper/reproducibility.md`
+## Files
+- paper/main.tex — manuscript source
+- paper/EXPERIMENT_PROTOCOL.md — staged hypotheses, baselines, metrics, and controls
+- paper/abstract.md, method.md, claims.md, limitations.md, reproducibility.md — modular research notes
+- Makefile — local PDF build target
 
-## Evidence status
-The manuscript describes a research protocol and executable prototype. It does **not** claim peer review, publication, real-world deployment, or empirical superiority until those are independently demonstrated.
+## Build
+Requires a LaTeX installation with the geometry, AMS math, booktabs, and hyperref packages.
+
+    make pdf
+    make clean
+
+## Evidence boundary
+The companion repository currently implements a deterministic scalar residual-control prototype. It does not yet contain a trained RL policy, robotic experiment, or evidence of empirical superiority. The manuscript states this explicitly; results must not be invented to make it appear submission-ready.
+
+Companion code: https://github.com/Hafiz-IIT/residual-rl-linear-priors

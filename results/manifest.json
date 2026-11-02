@@ -1,0 +1,8 @@
+{
+  "study": "residual-control-matched-baseline",
+  "status": "not_run",
+  "results_available": false,
+  "data_type": "synthetic_scalar_simulation",
+  "required_metrics": ["cumulative_cost", "final_abs_state", "peak_abs_state", "action_saturation_fraction", "divergence_rate"],
+  "notes": "No trained RL policy or robotic experiment is currently implemented."
+}

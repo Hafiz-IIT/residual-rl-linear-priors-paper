@@ -1,1 +1,1 @@
-Manuscript scaffold linked to the executable residual-control prototype. No publication or peer-review claim.
+LaTeX manuscript, verified references, experiment protocol, and results schema are in place. CI compiles the source. No empirical results, trained RL agent, submission, or publication is claimed.

@@ -11,6 +11,7 @@
 This manuscript develops an experimental question: can a learned residual policy improve a transparent linear control prior while retaining inspectable baseline behavior? The accompanying software currently implements only a deterministic scalar residual-control prototype. It does not yet implement a trained reinforcement-learning agent or establish empirical superiority. We specify the proposed architecture, evaluation design, and evidence required before making performance claims.
 \end{abstract}
 \section{Introduction}
+Residual formulations combine conventional feedback with an RL residual, as demonstrated in robot manipulation by Johannink et al. \cite{johannink2019residual}. Safety and risk constraints require separate treatment; see García and Fernández \cite{garcia2015safe} and Berkenkamp et al. \cite{berkenkamp2017safe}.,The residual-control hypothesis is testable, but the current artifact is an initial deterministic scaffold.
 Robotic control often combines structured controllers with data-driven adaptation. A residual formulation preserves a nominal controller and assigns a learned component the narrower task of correcting its action. This can improve interpretability of the baseline, but does not by itself guarantee stability or safety.
 \section{Research question and hypotheses}
 The primary question is whether a residual policy can reduce task cost relative to a matched nominal controller under controlled model mismatch. H1: a trained residual policy may improve finite-horizon cost on held-out disturbances. H2: constraining residual magnitude may reduce extreme actions, while potentially limiting adaptation. Both hypotheses require experiments.
@@ -28,4 +29,9 @@ No empirical results are reported in this draft. This section must be populated 
 A scalar synthetic plant cannot establish robotic generalization. Hyperparameter selection, simulator fidelity, reward design, and disturbance coverage may bias results. Bounded actions do not establish closed-loop stability.
 \section{Conclusion}
 The residual-control hypothesis is testable, but the current artifact is an initial deterministic scaffold. Claims about learned RL performance are deferred until a trained policy and controlled comparisons exist.
+\begin{thebibliography}{9}
+\bibitem{johannink2019residual} T. Johannink, S. Bahl, A. Nair, J. Luo, A. Kumar, M. Loskyll, J. A. Ojea, E. Solowjow, and S. Levine. Residual Reinforcement Learning for Robot Control. \textit{Proceedings of the IEEE International Conference on Robotics and Automation}, 2019. DOI: \href{https://doi.org/10.1109/ICRA.2019.8794127}{10.1109/ICRA.2019.8794127}.
+\bibitem{garcia2015safe} J. García and F. Fernández. A Comprehensive Survey on Safe Reinforcement Learning. \textit{Journal of Machine Learning Research}, 16(42):1437--1480, 2015. \url{https://www.jmlr.org/papers/v16/garcia15a.html}.
+\bibitem{berkenkamp2017safe} F. Berkenkamp, M. Turchetta, A. P. Schoellig, and A. Krause. Safe Model-based Reinforcement Learning with Stability Guarantees. \textit{Advances in Neural Information Processing Systems}, 30, 2017. \url{https://arxiv.org/abs/1705.08551}.
+\end{thebibliography}
 \end{document}

@@ -1,0 +1,31 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage{hyperref}
+\title{Residual Reinforcement Learning with Linear Statistical Priors for Robotic Automation}
+\author{Syed Hafiz Ali}
+\date{Research manuscript in preparation}
+\begin{document}
+\maketitle
+\begin{abstract}
+This manuscript develops an experimental question: can a learned residual policy improve a transparent linear control prior while retaining inspectable baseline behavior? The accompanying software currently implements only a deterministic scalar residual-control prototype. It does not yet implement a trained reinforcement-learning agent or establish empirical superiority. We specify the proposed architecture, evaluation design, and evidence required before making performance claims.
+\end{abstract}
+\section{Introduction}
+Robotic control often combines structured controllers with data-driven adaptation. A residual formulation preserves a nominal controller and assigns a learned component the narrower task of correcting its action. This can improve interpretability of the baseline, but does not by itself guarantee stability or safety.
+\section{Research question and hypotheses}
+The primary question is whether a residual policy can reduce task cost relative to a matched nominal controller under controlled model mismatch. H1: a trained residual policy may improve finite-horizon cost on held-out disturbances. H2: constraining residual magnitude may reduce extreme actions, while potentially limiting adaptation. Both hypotheses require experiments.
+\section{Proposed method}
+Let the nominal action be $u_p(x)$ and the learned residual be $\pi_\theta(x)$. The combined action is
+\[
+u(x)=\operatorname{clip}(u_p(x)+\operatorname{clip}(\pi_\theta(x),-\rho,\rho),-u_{\max},u_{\max}).
+\]
+The current companion prototype substitutes a fixed cubic residual for $\pi_\theta$ and is therefore a control scaffold, not an RL implementation.
+\section{Experimental design}
+Compare nominal-only, residual-only diagnostic, and hybrid policies on matched initial states and disturbance sequences. Include model mismatch, observation noise, action saturation, and held-out parameter settings. Report cumulative cost, tracking error, peak state magnitude, saturation frequency, and failures.
+\section{Results}
+No empirical results are reported in this draft. This section must be populated only after experiments are executed, logged, and independently reproducible.
+\section{Threats to validity}
+A scalar synthetic plant cannot establish robotic generalization. Hyperparameter selection, simulator fidelity, reward design, and disturbance coverage may bias results. Bounded actions do not establish closed-loop stability.
+\section{Conclusion}
+The residual-control hypothesis is testable, but the current artifact is an initial deterministic scaffold. Claims about learned RL performance are deferred until a trained policy and controlled comparisons exist.
+\end{document}
